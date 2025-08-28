@@ -1,17 +1,9 @@
 # VE HMR Test
 
-This repo contains various HMR scenarios for VE modules.
+Reproduces a VE HMR issue.
 
-## Scenarios
+## Reproduction
 
-### Basic
-
-`App.tsx` imports `App.css.ts`. Updating a style within `App.css.ts` should trigger an HMR update in `App.tsx`.
-
-### Basic
-
-`App.tsx` imports `App.css.ts`. Updating a style within `App.css.ts` should trigger an HMR update in `App.tsx`.
-
-### Nested
-
-`App.css.ts` imports `nested.css.ts`. Updating a value or a style within `nested.css.ts` should trigger an HMR update in `App.css.ts` and `App.tsx`.
+1. Run `pnpm install && pnpm dev`
+1. Change the `primary` color in `tokens.ts`
+1. HMR happens, the raw token value in the markup changes but the style that consumes it does not.

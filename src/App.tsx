@@ -1,19 +1,11 @@
-import {
-  app,
-  libStyleConsumer,
-  nestedComplexStyle,
-  nestedConstant,
-  nestedLibStyleConsumer,
-} from "./App.css.ts";
+import { color } from "./App.css.ts";
+import { colors } from "./tokens.ts";
 
 export function App() {
   return (
     <div>
-      <div className={app}>Regular style</div>
-      <div className={nestedConstant}>Nested constant</div>
-      <div className={nestedComplexStyle}>Nested complex style</div>
-      <div className={libStyleConsumer}>Indirect lib style</div>
-      <div className={nestedLibStyleConsumer}>Nested indirect lib style</div>
+      <div className={color}>Token consumed in style</div>
+      <div>Raw token: {colors.primary}</div>
     </div>
   );
 }
